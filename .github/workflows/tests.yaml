@@ -20,6 +20,6 @@ jobs:
     - uses: calcit-lang/setup-cr@0.0.9
 
     - name: "test"
-      run: caps --ci && cr -1 --entry test
+      run: caps --ci && cr --entry test
 
-    - run: cr -1 --entry test js && yarn && node ./main.mjs
+    - run: cr --entry test js && yarn && node ./main.mjs
