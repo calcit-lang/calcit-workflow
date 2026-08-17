@@ -1,6 +1,4 @@
 
-{}
-  :calcit-version |0.9.4
-  :dependencies $ {}
-    |calcit-lang/calcit-test |main
-    |calcit-lang/calcit.std |main
+{} (:calcit-version |0.13.19)
+  :dependencies $ {} (|calcit-lang/calcit.std |main)
+  :dev-dependencies $ {} (|calcit-lang/calcit-test |main)
