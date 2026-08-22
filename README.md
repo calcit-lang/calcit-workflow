@@ -9,21 +9,21 @@ Calcit Workflow
 Install [Calcit](https://github.com/calcit-lang/calcit) to run demo:
 
 ```bash
-cr calcit.cirru # run once
+calcit calcit.cirru # run once
 
-cr calcit.cirru -w # run and watch
+calcit calcit.cirru -w # run and watch
 ```
 
 run tests:
 
 ```bash
-cr calcit.cirru --entry test
+calcit calcit.cirru --entry test
 ```
 
 run test in JavaScript:
 
 ```bash
-cr calcit.cirru --entry test js # emit JS once
+calcit calcit.cirru --entry test js # emit JS once
 node main.mjs # run code
 ```
 

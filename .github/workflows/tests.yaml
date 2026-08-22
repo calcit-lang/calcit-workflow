@@ -22,25 +22,25 @@ jobs:
         corepack enable
         corepack prepare yarn@4.12.0 --activate
 
-    - uses: calcit-lang/setup-cr@0.0.9
+    - uses: calcit-lang/setup-calcit@v1
 
     - name: "install modules"
       run: caps --ci
 
     - name: "validate snapshots and entries"
       run: |
-        cr calcit.cirru edit format
+        calcit calcit.cirru edit format
         git diff --exit-code -- calcit.cirru
-        cr calcit.cirru --check-only
-        cr calcit.cirru --entry test --check-only
-        cr calcit.cirru --warn-dyn-method --check-only
-        cr calcit.cirru --entry test --warn-dyn-method --check-only
-        cr calcit.cirru analyze check-types --summary-only --format json
-        cr calcit.cirru analyze weak-types --only schema-dynamic,code-dynamic --intent unresolved --summary-only --format json
-        cr calcit.cirru analyze deprecated --summary-only --format json
+        calcit calcit.cirru --check-only
+        calcit calcit.cirru --entry test --check-only
+        calcit calcit.cirru --warn-dyn-method --check-only
+        calcit calcit.cirru --entry test --warn-dyn-method --check-only
+        calcit calcit.cirru analyze check-types --summary-only --format json
+        calcit calcit.cirru analyze weak-types --only schema-dynamic,code-dynamic --intent unresolved --summary-only --format json
+        calcit calcit.cirru analyze deprecated --summary-only --format json
 
     - name: "test JavaScript"
       run: |
-        cr calcit.cirru --entry test js
+        calcit calcit.cirru --entry test js
         yarn install --immutable
         node ./main.mjs
