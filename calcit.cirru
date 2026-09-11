@@ -16,23 +16,32 @@
           :code $ quote
             defn calling-func () $ println "|todo bcc"
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
         'main! $ %{} 'CodeEntry (:doc |)
           :code $ quote
             defn main! () (run-tests)
               set-interval 2000 $ fn () (calling-func)
+              , &unit
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
         'on-error $ %{} 'CodeEntry (:doc |)
           :code $ quote
             defn on-error (message) (; draw-error-message message)
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ [] 'String
         'reload! $ %{} 'CodeEntry (:doc |)
           :code $ quote
             defn reload! () $ echo |Reloaded.
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
       :ns $ %{} 'NsEntry (:doc |)
         :code $ quote
           ns app.main $ :require
@@ -44,22 +53,30 @@
           :code $ quote
             defn main! () $ run-tests
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
         'reload! $ %{} 'CodeEntry (:doc |)
           :code $ quote
             defn reload! () $ println "|TODO reload"
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
         'run-tests $ %{} 'CodeEntry (:doc |)
           :code $ quote
             defn run-tests () $ test-add
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
         'test-add $ %{} 'CodeEntry (:doc |)
           :code $ quote
             defn test-add () $ is= 2 (+ 1 1)
           :examples $ []
-          :schema $ :: 'Dynamic
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
       :ns $ %{} 'NsEntry (:doc |)
         :code $ quote
           ns app.test $ :require
