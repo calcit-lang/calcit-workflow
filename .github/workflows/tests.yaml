@@ -6,6 +6,9 @@ on:
       - main
   pull_request: {}
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -27,7 +30,7 @@ jobs:
     - uses: calcit-lang/setup-calcit@ca701be5a471759e442aa053cd100720bbe1f09f # v1
 
     - name: "install modules"
-      run: caps --ci
+      run: caps --strict --ci
 
     - name: "validate snapshots and entries"
       run: |
@@ -35,8 +38,8 @@ jobs:
         git diff --exit-code -- calcit.cirru
         calcit calcit.cirru --check-only
         calcit calcit.cirru --entry test --check-only
-        calcit calcit.cirru --warn-dyn-method --check-only
-        calcit calcit.cirru --entry test --warn-dyn-method --check-only
+        calcit calcit.cirru analyze dynamic-methods --max 0
+        calcit --entry test calcit.cirru analyze dynamic-methods --max 0
         calcit calcit.cirru analyze check-types --summary-only --format json
         calcit calcit.cirru analyze weak-types --only schema-dynamic,code-dynamic --intent unresolved --summary-only --format json
         calcit calcit.cirru analyze deprecated --summary-only --format json
