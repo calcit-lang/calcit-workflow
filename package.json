@@ -2,6 +2,6 @@
   "version": "0.0.12",
   "packageManager": "yarn@4.18.0",
   "dependencies": {
-    "@calcit/procs": "0.24.3"
+    "@calcit/procs": "0.28.0"
   }
 }
