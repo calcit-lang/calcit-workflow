@@ -3,11 +3,11 @@
   :about "|Machine-generated snapshot. Do not edit directly — changes will be overwritten. Use `calcit query` to inspect and `calcit edit`/`calcit tree` to modify. Run `calcit docs agents --contract` before mutations; use `--full` for first orientation or changed contract digest. Manual edits must follow format and schema conventions, then run `calcit edit format`."
   :package |app
   :entries $ {}
-    :default $ {} (:description |) (:init-fn 'app.main/main!) (:mode :native) (:reload-fn 'app.main/reload!)
+    :default $ {} (:description |) (:init-fn 'app.main/main!) (:mode :native) (:reload-fn 'app.main/reload!) (:target :native)
       :feature-policy $ {}
       :modules $ [] |calcit.std/
       :type-slots $ {}
-    :test $ {} (:description |) (:init-fn 'app.test/main!) (:mode :native) (:reload-fn 'app.test/reload!)
+    :test $ {} (:description |) (:init-fn 'app.test/main!) (:mode :native) (:reload-fn 'app.test/reload!) (:target :native)
       :feature-policy $ {}
       :modules $ []
       :type-slots $ {}
@@ -27,7 +27,7 @@
           :schema $ :: 'Fn $ {} (:return 'Unit)
             :args $ []
         'on-error $ %{} 'CodeEntry (:doc |)
-          :code $ quote $ defn on-error (message) (; draw-error-message message)
+          :code $ quote $ defn on-error (message) (; draw-error-message message) &unit
           :examples $ []
           :schema $ :: 'Fn $ {} (:return 'Unit)
             :args $ [] 'String
