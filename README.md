@@ -4,6 +4,9 @@ Calcit Workflow
 
 > 使用正式 Calcit 0.28.0，支持原生执行与生成 JavaScript。
 
+依赖固定到正式 `calcit.std` 0.2.37，不使用 main、hash 或 alpha 版本。
+保留原定时器行为、严格类型检查及原 native/JS 加法测试，不新增验证脚本。
+
 ### Usages
 
 Install [Calcit](https://github.com/calcit-lang/calcit) to run demo:
