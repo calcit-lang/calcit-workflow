@@ -15,13 +15,13 @@
     'app.main $ %{} 'FileEntry
       :defs $ {}
         'calling-func $ %{} 'CodeEntry (:doc |)
-          :code $ quote $ defn calling-func () (println "|todo bcc")
+          :code $ quote $ defn calling-func () (println "|todo bcc") &unit
           :examples $ []
           :schema $ :: 'Fn $ {} (:return 'Unit)
             :args $ []
         'main! $ %{} 'CodeEntry (:doc |)
           :code $ quote $ defn main! () (run-tests)
-            set-interval 2000 $ fn () $ calling-func
+            set-interval! 2000 $ fn () $ calling-func
             , &unit
           :examples $ []
           :schema $ :: 'Fn $ {} (:return 'Unit)
@@ -32,7 +32,7 @@
           :schema $ :: 'Fn $ {} (:return 'Unit)
             :args $ [] 'String
         'reload! $ %{} 'CodeEntry (:doc |)
-          :code $ quote $ defn reload! () (echo |Reloaded.)
+          :code $ quote $ defn reload! () (echo |Reloaded.) &unit
           :examples $ []
           :schema $ :: 'Fn $ {} (:return 'Unit)
             :args $ []
@@ -40,7 +40,7 @@
         :code $ quote $ ns app.main
           :require
             app.test :refer $ run-tests
-            calcit.std.time :refer $ set-interval
+            calcit.std.time :refer $ set-interval!
     'app.test $ %{} 'FileEntry
       :defs $ {}
         'main! $ %{} 'CodeEntry (:doc |)
@@ -49,7 +49,7 @@
           :schema $ :: 'Fn $ {} (:return 'Unit)
             :args $ []
         'reload! $ %{} 'CodeEntry (:doc |)
-          :code $ quote $ defn reload! () (println "|TODO reload")
+          :code $ quote $ defn reload! () (println "|TODO reload") &unit
           :examples $ []
           :schema $ :: 'Fn $ {} (:return 'Unit)
             :args $ []

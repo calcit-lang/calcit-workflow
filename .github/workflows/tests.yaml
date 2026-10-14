@@ -49,8 +49,9 @@ jobs:
         calcit calcit.cirru edit format
         git diff --exit-code -- calcit.cirru
         calcit calcit.cirru --check-only
+        calcit calcit.cirru fix --workflow strict --verify --format json
         calcit calcit.cirru --entry test --check-only
-        calcit calcit.cirru analyze check-public --ns app.main --ns app.test --summary-only
+        calcit calcit.cirru --check-only --ns app.main --ns app.test --summary-only
 
     - name: "test native"
       run: calcit calcit.cirru --entry test
