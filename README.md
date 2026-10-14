@@ -2,10 +2,12 @@
 Calcit Workflow
 ----
 
-> 使用正式 Calcit 0.28.0，支持原生执行与生成 JavaScript。
+> 使用正式 Calcit 0.29.3，支持原生执行与生成 JavaScript。
 
-依赖固定到正式 `calcit.std` 0.2.37，不使用 main、hash 或 alpha 版本。
+依赖固定到正式 `calcit.std` 0.2.41，不使用 main、hash 或 alpha 版本。
 保留原定时器行为、严格类型检查及原 native/JS 加法测试，不新增验证脚本。
+定时器使用正式模块的首选 `set-interval!`，保留原两秒间隔；打印 callback 与
+reload 函数返回真实 `Unit`。完整 strict workflow 由 CI 直接检查。
 
 ### Usages
 
