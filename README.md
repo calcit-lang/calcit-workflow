@@ -2,9 +2,10 @@
 Calcit Workflow
 ----
 
-> 使用正式 Calcit 0.29.3，支持原生执行与生成 JavaScript。
+> 使用正式 Calcit 0.30.0，支持原生执行与测试入口生成 JavaScript。
 
-依赖固定到正式 `calcit.std` 0.2.41，不使用 main、hash 或 alpha 版本。
+CLI 与 `@calcit/procs` 固定为 0.30.0，依赖固定到正式 `calcit.std` 0.2.42，
+不使用 main、hash 或 alpha 版本。0.30.1 正式发布后再进行相应验收。
 保留原定时器行为、严格类型检查及原 native/JS 加法测试，不新增验证脚本。
 定时器使用正式模块的首选 `set-interval!`，保留原两秒间隔；打印 callback 与
 reload 函数返回真实 `Unit`。完整 strict workflow 由 CI 直接检查。
@@ -37,6 +38,8 @@ node main.mjs # run code
 ```
 
 默认入口会注册定时器；执行有限时长测试使用独立 `test` entry。
+默认入口通过 std 原生动态库执行定时器；JS 验证只覆盖有限测试入口，
+不代表默认定时器入口已在 JS 后端验证。原生动态库须与运行平台匹配。
 CI 检查两个原生入口、全部 8 个业务定义、规范格式及原加法测试的 native/JS 执行。
 本项目没有附带定义测试，不能把零匹配当作测试通过。
 不增加统计报告、额外验证脚本或新迁移规则。

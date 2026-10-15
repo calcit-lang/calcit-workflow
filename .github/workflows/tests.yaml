@@ -32,6 +32,7 @@ jobs:
       with:
         tools: calcit,caps
         caps-version: "0.1.1"
+        deps-file: deps.cirru
 
     - name: "install modules"
       run: |
