@@ -2,10 +2,12 @@
 Calcit Workflow
 ----
 
-> 使用正式 Calcit 0.30.0，支持原生执行与测试入口生成 JavaScript。
+> 配对使用已发布的 Calcit 0.30.1-alpha.5，支持原生执行与测试入口生成 JavaScript。
 
-CLI 与 `@calcit/procs` 固定为 0.30.0，依赖固定到正式 `calcit.std` 0.2.43，
-不使用 main、hash 或 alpha 版本。0.30.1 正式发布后再进行相应验收。
+使用者影响：CLI 与 `@calcit/procs` 同步固定为 `0.30.1-alpha.5`，
+模块依赖仍为正式 `calcit.std` `0.2.43`，不使用 main、hash 或 alpha 模块版本。
+正式 `0.30.1` 当前发行资产尚未包含 macOS 二进制；本轮验证的是已完成配对
+发布的 alpha.5，不代表正式版完整跨平台兼容保证，也不创建模板或 std 新版本。
 保留原定时器行为、严格类型检查及原 native/JS 加法测试，不新增验证脚本。
 定时器使用正式模块的首选 `set-interval!`，保留原两秒间隔；打印 callback 与
 reload 函数返回真实 `Unit`。完整 strict workflow 由 CI 直接检查。
