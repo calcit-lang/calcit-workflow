@@ -49,13 +49,22 @@ jobs:
         test ! -e package.cirru
         calcit calcit.cirru edit format
         git diff --exit-code -- calcit.cirru
-        calcit calcit.cirru --check-only
+        calcit calcit.cirru --check-only --all-defs
         calcit calcit.cirru fix --workflow strict --verify --format json
         calcit calcit.cirru --entry test --check-only
         calcit calcit.cirru --check-only --ns app.main --ns app.test --summary-only
 
     - name: "test native"
       run: calcit calcit.cirru --entry test
+
+    - name: "run native timer demo"
+      run: |
+        set -euo pipefail
+        status=0
+        timeout 5s calcit calcit.cirru > .calcit/timer-demo.log 2>&1 || status=$?
+        cat .calcit/timer-demo.log
+        test "$status" -eq 124
+        grep -F 'todo bcc' .calcit/timer-demo.log
 
     - name: "test JavaScript"
       run: |
