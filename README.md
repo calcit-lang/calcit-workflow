@@ -2,9 +2,9 @@
 Calcit Workflow
 ----
 
-> 配对使用正式 Calcit 0.30.1，支持原生执行与测试入口生成 JavaScript。
+> 配对使用正式 Calcit 0.31.0，支持原生执行与测试入口生成 JavaScript。
 
-使用者影响：CLI 与 `@calcit/procs` 同步固定为正式 `0.30.1`，
+使用者影响：CLI 与 `@calcit/procs` 同步固定为正式 `0.31.0`，
 模块依赖升级到正式 `calcit.std` `0.2.44`，不使用 main、hash 或 alpha 模块版本。
 std 的安装构建现在使用 `--locked`，依赖锁文件需要调整时会失败，不再隐式修改。
 目标机器仍需匹配的 native dylib；Linux CI 不代表所有平台均已完成 runtime 验收，
