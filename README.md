@@ -2,13 +2,15 @@
 Calcit Workflow
 ----
 
-> 配对使用正式 Calcit 0.31.0，支持原生执行与测试入口生成 JavaScript。
+> 配对使用正式 Calcit 0.32.0，支持原生执行与测试入口生成 JavaScript。
 
-使用者影响：CLI 与 `@calcit/procs` 同步固定为正式 `0.31.0`，
-模块依赖升级到正式 `calcit.std` `0.2.44`，不使用 main、hash 或 alpha 模块版本。
+使用者影响：CLI 与 `@calcit/procs` 同步固定为正式 `0.32.0`，
+模块依赖升级到正式 `calcit.std` `0.2.46`，不使用 main、hash 或 alpha 模块版本。
 std 的安装构建现在使用 `--locked`，依赖锁文件需要调整时会失败，不再隐式修改。
 目标机器仍需匹配的 native dylib；Linux CI 不代表所有平台均已完成 runtime 验收，
 本轮也不创建模板新版本或部署应用。
+本轮由官方 format 迁移类型表示，8 个业务定义的完整查询视图保持一致。
+新类型语法要求 CLI/runtime 一起升级并重新生成 JS。
 保留原定时器行为、严格类型检查及原 native/JS 加法测试，不新增验证脚本。
 定时器使用正式模块的首选 `set-interval!`，保留原两秒间隔；打印 callback 与
 reload 函数返回真实 `Unit`。完整 strict workflow 由 CI 直接检查。
