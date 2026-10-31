@@ -5,7 +5,7 @@
 ## 对使用者的影响
 
 CLI 与 `@calcit/procs` 配对升级到 0.32.1，需重新安装依赖并生成 JS。
-标准库继续使用已发布的 `calcit.std` 0.2.46，原生 dylib 必须匹配运行平台；Linux CI 不代表所有平台都已验收。
+标准库继续使用已发布的 `calcit.std` 0.2.47，原生 dylib 必须匹配运行平台；Linux CI 不代表所有平台都已验收。
 不使用 main、hash 或 alpha 模块版本，不发布模板新版本，也不部署应用。
 
 本次 Snapshot、八个业务定义的 schema、原加法测试和定时器逻辑不变。
